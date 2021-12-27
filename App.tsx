@@ -7,6 +7,7 @@ import PhoneNumber from "./screens/PhoneNumber";
 const App = () => {
  type StackParamList = {
    PhoneNumber: undefined;
+   PhoneNumber2: undefined;
  };
 
  const Stack = createNativeStackNavigator<StackParamList>();
@@ -20,6 +21,7 @@ const App = () => {
        }}
      >
        <Stack.Screen name="PhoneNumber" component={PhoneNumber} />
+       <Stack.Screen name="PhoneNumber2" component={PhoneNumber} />
      </Stack.Navigator>
    </NavigationContainer>
  );

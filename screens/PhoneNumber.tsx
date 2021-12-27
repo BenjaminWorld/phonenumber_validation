@@ -16,6 +16,17 @@ const PhoneNumber = ({navigation}: {navigation: any}) => {
  const [formattedValue, setFormattedValue] = useState("");
  const phoneInput = useRef<PhoneInput>(null);
 
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+const client = require('twilio')(accountSid, authToken);
+
+let check = () => {client.lookups.v1.phoneNumbers(value)
+                 .fetch({countryCode: 'HK'})
+                 .then((phone_number: { phoneNumber: any; }) => console.log(phone_number.phoneNumber));
+}
+
+// let check2 = () => {navigation.navigate("PhoneNumber2")}
+
  return (
    <>
      <View style={styles.container}>
@@ -40,11 +51,12 @@ const PhoneNumber = ({navigation}: {navigation: any}) => {
          />
          <TouchableOpacity
             style={styles.button}
-            onPress={() => {
-            sendSmsVerification(formattedValue).then((sent) => {
-                console.log("Sent!");
-            });
-            }}
+            // onPress={() => {
+            // sendSmsVerification(formattedValue).then((sent) => {
+            //     console.log("Sent!");
+            // });
+            // }}
+            onPress={check}
             >
 
            <Text style={styles.buttonText}>Sign Up</Text>
