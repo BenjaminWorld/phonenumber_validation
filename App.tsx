@@ -21,7 +21,7 @@ const App = () => {
        }}
      >
        <Stack.Screen name="PhoneNumber" component={PhoneNumber} />
-       <Stack.Screen name="PhoneNumber2" component={PhoneNumber} />
+       {/* <Stack.Screen name="PhoneNumber2" component={PhoneNumber} />for backend logic purpose, but failed *can neglect this row */}
      </Stack.Navigator>
    </NavigationContainer>
  );

@@ -25,7 +25,7 @@ let check = () => {client.lookups.v1.phoneNumbers(value)
                  .then((phone_number: { phoneNumber: any; }) => console.log(phone_number.phoneNumber));
 }
 
-// let check2 = () => {navigation.navigate("PhoneNumber2")}
+// let check2 = () => {navigation.navigate("PhoneNumber2")} for backend logic purpose, but failed; * please neglect
 
  return (
    <>
